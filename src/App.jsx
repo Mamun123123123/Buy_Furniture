@@ -8,7 +8,6 @@ const App = () => {
   <Navbar />
   <main className='min-h-screen'>
     <Outlet />
-       
   </main>
     <footer>footer</footer>
     </>

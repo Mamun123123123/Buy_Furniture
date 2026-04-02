@@ -3,7 +3,7 @@ import heroImg from "../assets/hero.png"
 const Home = () => {
   return (
     <>
-      <section className={`relative h-screen bg-cover bg-center text-taupe-800  `} style={{ backgroundImage: `url(${heroImg})` }}>
+      <section className={`relative h-screen bg-cover bg-center   text-taupe-800  `} style={{ backgroundImage: `url(${heroImg})` }}>
 
         <div className='relative md:pt-38 pt-30 px-4 text-center md:w-1/2 mx-auto space-y-6'>
 

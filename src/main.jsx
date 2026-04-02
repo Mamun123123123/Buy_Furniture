@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Shop from './pages/Shop.jsx';
+import WhyChoose from './pages/WhyChoose.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home />
+        element:
+        ( <> <Home /> <WhyChoose />  </>)
       },
       {
         path:'/about',
