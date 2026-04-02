@@ -6,7 +6,10 @@ const App = () => {
   return (
     <>
   <Navbar />
+  <main className='min-h-screen'>
     <Outlet />
+       
+  </main>
     <footer>footer</footer>
     </>
     

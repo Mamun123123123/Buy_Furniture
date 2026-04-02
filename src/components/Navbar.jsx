@@ -14,8 +14,8 @@ const Navbar = () => {
 
     return (
         <>
-            <header>
-                <nav className='flex justify-between md:justify-evenly items-center px-4 py-6'>
+            <header className="fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out">
+                <nav className='flex bg-amber-100 justify-between md:justify-evenly items-center px-4 py-6'>
                     <div>
                         <h3>Mamun_Furniture</h3>
                     </div>
