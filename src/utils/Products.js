@@ -32,14 +32,7 @@ export const products = [
     imageUrl: "chair-4.png",
     rating: 4,
   },
-  {
-    id: 5,
-    name: "Minimalist Chair",
-    category: "Chair",
-    price: 89,
-    imageUrl: "chair-5.png",
-    rating: 4.5,
-  },
+  
 
   // Beds
   {
@@ -74,14 +67,7 @@ export const products = [
     imageUrl: "beds-4.png",
     rating: 2,
   },
-  {
-    id: 10,
-    name: "Sleigh Bed",
-    category: "Beds",
-    price: 459,
-    imageUrl: "beds-5.png",
-    rating: 5,
-  },
+  
 
   // Sofas
   {
@@ -116,15 +102,8 @@ export const products = [
     imageUrl: "sofa-4.png",
     rating: 5,
   },
-  {
-    id: 15,
-    name: "Sectional Sofa",
-    category: "Sofa",
-    price: 799,
-    imageUrl: "sofa-5.png",
-    rating: 3.6,
-  },
-
+ 
+ 
   // Lamps
   {
     id: 16,
@@ -158,12 +137,5 @@ export const products = [
     imageUrl: "lamp-4.png",
     rating: 5,
   },
-  {
-    id: 20,
-    name: "Vintage Desk Lamp",
-    category: "Lamp",
-    price: 79,
-    imageUrl: "lamp-6.png",
-    rating: 4,
-  },
+  
 ];

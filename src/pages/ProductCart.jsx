@@ -9,7 +9,7 @@ const ProductCart = ({ item }) => {
         <img
           src={getImgURL(item.imageUrl)}
           alt={item.name}
-          className="w-20 h-30 object-cover group-hover:scale-110 transition duration-300"
+          className="w-60 h-40 m-4 object-cover group-hover:scale-110 transition duration-300"
         />
       </div>
       <div className="p-4 space-y-2">
