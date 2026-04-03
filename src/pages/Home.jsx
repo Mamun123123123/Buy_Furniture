@@ -13,6 +13,7 @@ const Home = () => {
 
         </div>
       </section>
+      
     </>
   )
 }

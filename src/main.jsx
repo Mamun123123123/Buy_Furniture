@@ -9,6 +9,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Shop from './pages/Shop.jsx';
 import WhyChoose from './pages/WhyChoose.jsx';
+import Products from './pages/Products.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:
-        ( <> <Home /> <WhyChoose />  </>)
+        ( <> <Home /> <WhyChoose /> <Products heading ="Best Selling Product"/> </>)
       },
       {
         path:'/about',
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
        {
         path:'/shop',
-        element:<Shop />
+        element:<><Shop /> <Products heading ="What's Your Choice"/></> 
       }
     ]
   },
