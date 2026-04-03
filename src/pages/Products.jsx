@@ -1,31 +1,50 @@
 import React, { useState } from 'react'
 import { products } from '../utils/Products'
 import ProductCart from './ProductCart'
+
 const Products = ({ heading }) => {
-    const category = ["Chair", "Beds", "Sofa", "Lamp"]
-    const [selected,setSelected] = useState("Chair")
-    const filterCategory = products.filter((item)=>item.category === selected)
-    return (
-        <>
-            <div>
-                <div>
-                    <h2 className='text-4xl font-bold text-center my-8'>{heading}</h2>
-                    <div className='bg-slate-200 max-w-md mx-auto sm:rounded-full md:p-2.5 mb-16'>
-                        <div className='flex md:justify-evenly sm:flex-row justify-center'>
-                            {category.map((item) =>
-                                <button key={item} onClick={()=>setSelected(item)} className={`py-1.5 sm:px-5 px-8 rounded-full ${selected === item ? "text-white bg-blue-900" : "bg-white"} hover:bg-amber-800  hover:text-white transition-colors`}>{item}</button>
-                            )}
-                        </div>
-                    </div>
-                    <div className='grid m-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
-                        {filterCategory.map((item, index) => {
-                            return <ProductCart key={index} item={item} />
-                        })}
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+  const category = ["Chair", "Beds", "Sofa", "Lamp"]
+  const [selected, setSelected] = useState("Chair")
+
+  const filterCategory = products.filter(
+    (item) => item.category === selected
+  )
+
+  return (
+    <div className="bg-gray-50 min-h-screen  px-4">
+
+      <h2 className="text-3xl md:text-4xl font-bold text-center my-10">
+        {heading}
+      </h2>
+
+      <div className="bg-white shadow-md max-w-2xl mx-auto rounded-full p-2 mb-12 overflow-x-auto">
+        <div className="flex gap-2 justify-evenly whitespace-nowrap">
+          {category.map((item) => (
+            <button
+              key={item}
+              onClick={() => setSelected(item)}
+              className={`px-5 py-2 rounded-full text-sm md:text-base transition whitespace-nowrap ${
+                selected === item
+                  ? "bg-blue-900 text-white"
+                  : "bg-gray-100 hover:bg-amber-600 hover:text-white"
+              }`}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </div>
+
+    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+  {filterCategory.map((item, index) => (
+    <div key={index} className="w-full max-w-[250px]">
+      <ProductCart item={item} />
+    </div>
+  ))}
+</div>
+
+    </div>
+  )
 }
 
 export default Products
