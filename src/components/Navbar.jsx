@@ -8,7 +8,6 @@ import { CartContext } from "../context/CartContex";
 const Navbar = () => {
 
     const [open,setOpen] = useState(false)
-
     const handleToggle = () =>{
         setOpen(prevState => !prevState)
     }
@@ -88,6 +87,18 @@ const Navbar = () => {
                                         Shop
                                     </NavLink>
                                 </li>
+                                 <li>
+                                    <NavLink 
+                                        className={({isActive})=> 
+                                            isActive 
+                                            ? "block text-green-700 font-semibold bg-green-50 px-4 py-2 rounded-xl" 
+                                            : "block hover:text-green-500 hover:bg-gray-100 px-4 py-2 rounded-xl transition"
+                                        } 
+                                        to="/cart"
+                                    >
+                                        Cart({cartCount})
+                                    </NavLink>
+                                </li>
 
                             </ul>
                         </div>
@@ -98,6 +109,7 @@ const Navbar = () => {
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/">Home</NavLink></li>
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/about">About</NavLink></li>
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/shop">Shop</NavLink></li>
+                            <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/cart">Cart({cartCount})</NavLink></li>
                         </ul>
                     </div>
                     <div className='hidden md:block cursor-pointer relative'>

@@ -13,14 +13,19 @@ const CartProvider = ({ children }) => {
       toast.error("Product already added")
     } else {
       setCartItems(prev => [...prev, product])
-      toast.success("Added to cart successfully")
+      toast.success("Added to cart")
     }
+  }
+
+  const removeFromCart = (id) => {
+    setCartItems(prev => prev.filter(item => item.id !== id))
+    toast.success("Removed from cart")
   }
 
   const cartCount = cartItems.length
 
   return (
-    <CartContext.Provider value={{cartCount, addToCart }}>
+    <CartContext.Provider value={{ cartItems, cartCount, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   )
