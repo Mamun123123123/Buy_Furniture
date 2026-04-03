@@ -1,8 +1,9 @@
 import { CiShoppingCart } from "react-icons/ci";
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router'
 import { ImCross } from "react-icons/im";
 import { FaBars } from "react-icons/fa6";
+import { CartContext } from "../context/CartContex";
 
 const Navbar = () => {
 
@@ -11,7 +12,7 @@ const Navbar = () => {
     const handleToggle = () =>{
         setOpen(prevState => !prevState)
     }
-
+    const {cartCount} = useContext(CartContext)
     return (
         <>
             <header className="fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out">
@@ -82,19 +83,6 @@ const Navbar = () => {
                                             ? "block text-green-700 font-semibold bg-green-50 px-4 py-2 rounded-xl" 
                                             : "block hover:text-green-500 hover:bg-gray-100 px-4 py-2 rounded-xl transition"
                                         } 
-                                        to="/contact"
-                                    >
-                                        Contact
-                                    </NavLink>
-                                </li>
-
-                                <li>
-                                    <NavLink 
-                                        className={({isActive})=> 
-                                            isActive 
-                                            ? "block text-green-700 font-semibold bg-green-50 px-4 py-2 rounded-xl" 
-                                            : "block hover:text-green-500 hover:bg-gray-100 px-4 py-2 rounded-xl transition"
-                                        } 
                                         to="/shop"
                                     >
                                         Shop
@@ -109,14 +97,13 @@ const Navbar = () => {
                         <ul className='hidden md:flex gap-6'>
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/">Home</NavLink></li>
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/about">About</NavLink></li>
-                            <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/contact">Contact</NavLink></li>
                             <li><NavLink className={({isActive})=> isActive? "text-green-700 font-semibold":"hover:text-green-500"} to="/shop">Shop</NavLink></li>
                         </ul>
                     </div>
                     <div className='hidden md:block cursor-pointer relative'>
                         <CiShoppingCart className="text-3xl"/>
                         <sup className="absolute top-0 -right-3 bg-amber-500 text-white h-5 w-5 rounded-full flex items-center justify-center text-sm">
-                            0
+                            {cartCount}
                         </sup>
                     </div>
 

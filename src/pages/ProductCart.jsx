@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import getImgURL from '../utils/getImageURL'
+import { CartContext } from '../context/CartContex'
 
 const ProductCart = ({ item }) => {
+  const {addToCart} = useContext(CartContext)
   return (
     <div className="bg-slate-200 rounded-4xl">
     
@@ -31,7 +33,7 @@ const ProductCart = ({ item }) => {
             ${item.price}
           </p>
 
-          <button className="bg-blue-900 text-white px-2 rounded-full hover:bg-blue-600 transition">
+          <button onClick={()=>{addToCart(item)}} className="bg-blue-900 text-white px-2 rounded-full hover:bg-blue-600 transition">
             +
           </button>
         </div>
